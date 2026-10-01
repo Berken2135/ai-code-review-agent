@@ -1,0 +1,8 @@
+[
+  "README.md",
+  "package-lock.json",
+  "src/orders/__init__.py",
+  "src/orders/service.py",
+  "tests/test_service.py",
+  "tests/test_other.py"
+]

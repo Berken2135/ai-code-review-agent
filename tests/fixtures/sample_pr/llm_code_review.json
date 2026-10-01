@@ -1,0 +1,59 @@
+{
+  "findings": [
+    {
+      "suggestion": "Use a parameterised query: `conn.execute(\"SELECT * FROM orders WHERE id = ?\", (order_id,))`.",
+      "confidence": 0.95,
+      "category": "security",
+      "severity": "high",
+      "file_path": "src/orders/service.py",
+      "line_start": 9,
+      "line_end": 10,
+      "title": "SQL injection in get_order",
+      "description": "`order_id` is concatenated into the SQL string, so a crafted id can run arbitrary SQL."
+    },
+    {
+      "suggestion": "Validate `0 <= pct <= 100` and raise `ValueError` otherwise.",
+      "confidence": 0.8,
+      "category": "bug",
+      "severity": "medium",
+      "file_path": "src/orders/service.py",
+      "line_start": 5,
+      "line_end": 40,
+      "title": "apply_discount accepts discounts above 100%",
+      "description": "A `pct` over 100 makes the price negative; negative percentages raise it."
+    },
+    {
+      "suggestion": null,
+      "confidence": 0.7,
+      "category": "security",
+      "severity": "medium",
+      "file_path": "b/src/orders/service.py",
+      "line_start": 9,
+      "line_end": 9,
+      "title": "Unsanitised input reaches the database",
+      "description": "Same query built from user input."
+    },
+    {
+      "suggestion": null,
+      "confidence": 0.99,
+      "category": "bug",
+      "severity": "high",
+      "file_path": "src/orders/ghost.py",
+      "line_start": 1,
+      "line_end": 2,
+      "title": "Invented finding",
+      "description": "This file is not part of the PR."
+    },
+    {
+      "suggestion": null,
+      "confidence": 0.2,
+      "category": "quality",
+      "severity": "low",
+      "file_path": "src/orders/service.py",
+      "line_start": 8,
+      "line_end": 8,
+      "title": "Missing return type",
+      "description": "get_order has no return annotation."
+    }
+  ]
+}

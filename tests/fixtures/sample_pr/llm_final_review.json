@@ -1,0 +1,10 @@
+{
+  "verdict": "approve",
+  "ranked_ids": [
+    1,
+    2,
+    3
+  ],
+  "drop_ids": [],
+  "summary": "Adds discount and order lookup helpers. get_order builds its SQL by string concatenation, which is exploitable and should be fixed first. apply_discount and its tests do not cover out-of-range percentages."
+}

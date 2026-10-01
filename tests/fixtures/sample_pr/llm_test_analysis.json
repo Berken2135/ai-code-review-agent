@@ -1,0 +1,20 @@
+{
+  "suggestions": [
+    {
+      "title": "Cover discounts outside 0-100%",
+      "severity": "medium",
+      "description": "Only the 10% happy path is tested; the boundary and invalid values are not.",
+      "file_path": "src/orders/service.py",
+      "test_file": "tests/test_service.py",
+      "framework": "pytest",
+      "test_code": "import pytest\nfrom orders.service import apply_discount\n\n\n@pytest.mark.parametrize(\"pct\", [-1, 101])\ndef test_invalid_discount_is_rejected(pct):\n    with pytest.raises(ValueError):\n        apply_discount(100, pct)\n",
+      "confidence": 0.85
+    },
+    {
+      "title": "Invented test target",
+      "description": "x",
+      "file_path": "src/orders/missing.py",
+      "confidence": 0.9
+    }
+  ]
+}

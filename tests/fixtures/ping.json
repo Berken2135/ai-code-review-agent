@@ -1,0 +1,11 @@
+{
+  "zen": "Keep it logically awesome.",
+  "hook_id": 123456,
+  "hook": {
+    "type": "Repository",
+    "events": ["pull_request"]
+  },
+  "repository": {
+    "full_name": "octo-org/octo-repo"
+  }
+}
